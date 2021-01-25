@@ -20,7 +20,7 @@ const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-    <QuizBackground backgroundImage={ db.bg }>
+    <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
 
         <Widget>
@@ -34,13 +34,16 @@ export default function Home() {
 
 
         <Widget>
-          <h1>Quizes da galera</h1>
-          <p>{db.external[0]}</p>
+          <Widget.Content>
+            <h1>Quizes da galera</h1>
+            <p>{db.external[0]}</p>
+          </Widget.Content>
         </Widget>
         
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl={ db.projectRepo } />
+      <GitHubCorner projectUrl={db.projectRepo} />
+      <meta property="og:image" content={db.bg} />
     </QuizBackground>
   );
 }
