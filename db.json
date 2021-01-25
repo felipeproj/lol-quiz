@@ -1,0 +1,42 @@
+{
+    "bg": "https://i.pinimg.com/originals/94/43/e4/9443e497dd26b57ef9616f08c9f5724b.png",
+    "projectRepo": "https://github.com/felipeproj/lol-quiz",
+    "title": "League of Legends - Quiz",
+    "description": "Quiz sobre os personagens de League of Legends",
+    "questions": [
+        {
+            "image": "https://",
+            "title": "Questão número 01",
+            "description": "Descrição da questão",
+            "answer": 1,
+            "alternatives": [
+                "Alternativa A",
+                "Alternativa B",
+                "Alternativa C",
+                "Alternativa D",
+                "Alternativa E"
+            ]
+        }
+    ],
+    "external": [
+        "link para o quiz"
+    ],
+    "theme": {
+        "colors": {
+            "primary": {
+              "light": "#df487f",
+              "main": "#d81b60",
+              "dark": "#971243",
+              "contrastText": "#fff"
+            },
+            "secondary": {
+              "light": "#ff4569",
+              "main": "#ff1744",
+              "dark": "#b2102f",
+              "contrastText": "#000"
+            },
+            "mainBg": "#1C1814"
+          },
+        "borderRadius": "4px"
+    }
+}
