@@ -3,9 +3,9 @@ import styled from 'styled-components';
 const Widget = styled.div`
 margin-top: 24px;
 margin-bottom: 24px;
-border: 1px solid ${({ theme }) => theme.colors.primary.dark };
+border: 1px solid ${({ theme }) => theme.colors.secondary.main };
 background-color: ${({ theme }) => theme.colors.mainBg };
-border-radius: 4px;
+border-radius: ${({ theme }) => theme.borderRadius };
 overflow: hidden;
 
 h2, h1, h3 {
@@ -26,7 +26,7 @@ display: flex;
 justify-content: flex-start;
 align-items: center;
 padding: 18px 32px;
-background-color: ${({ theme }) => theme.colors.primary.main };
+background-color: ${({ theme }) => theme.colors.secondary.light };
 
 * {
   margin: 0;

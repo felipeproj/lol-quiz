@@ -1,28 +1,16 @@
-import styled from 'styled-components'
+import { useRouter } from 'next/router';
+
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
-
-const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  position: absolute;
-  top: 8%;
-  border: 0;
-  right: 20%;
-  z-index: 20;
-
-  @media screen and (max-width: 500px) {
-    right: -10%;
-    padding: 15px;
-  }
-`;
-
+import QuizContainer from '../src/components/QuizContainer';
+import { Button, HoverButton } from '../src/components/Button';
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
@@ -33,6 +21,10 @@ export default function Home() {
           </Widget.Header>
           <Widget.Content>
             <p>{db.description}</p>
+
+            <HoverButton>
+              <Button onClick={() => router.push('/quiz')}>JOGAR</Button>
+            </HoverButton>
           </Widget.Content>
         </Widget>
 
