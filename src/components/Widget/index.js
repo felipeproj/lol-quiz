@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Widget = styled.div`
 margin-top: 24px;
 margin-bottom: 24px;
-border: 1px solid ${({ theme }) => theme.colors.secondary.main };
+border: 2px solid ${({ theme }) => theme.colors.primary.main };
 background-color: ${({ theme }) => theme.colors.mainBg };
 border-radius: ${({ theme }) => theme.borderRadius };
 overflow: hidden;
@@ -22,15 +22,15 @@ p {
 `;
 
 Widget.Header = styled.header`
-display: flex;
-justify-content: flex-start;
-align-items: center;
-padding: 18px 32px;
-background-color: ${({ theme }) => theme.colors.secondary.light };
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 18px 32px;
+  background-color: ${({ theme }) => theme.colors.primary.main };
 
-* {
-  margin: 0;
-}
+  * {
+    margin: 0;
+  }
 `;
 
 Widget.Content = styled.div`

@@ -3,15 +3,18 @@ import styled from 'styled-components'
 const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
-  padding-top: 45px;
-  position: absolute;
-  top: 8%;
-  border: 0;
-  right: 20%;
+  padding-top: 50px;
+  margin: auto 10% auto 55%;
   z-index: 20;
 
+  @media screen and (min-width: 501px) and (max-width: 1024px) {
+    margin: auto;
+    padding-top: 70px;
+    max-width: 500px;
+  }
+
   @media screen and (max-width: 500px) {
-    right: -10%;
+    margin: auto;
     padding: 15px;
   }
 `;

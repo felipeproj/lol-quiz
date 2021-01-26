@@ -2,7 +2,6 @@ import { useRouter } from 'next/router';
 
 import db from '../db.json';
 import Widget from '../src/components/Widget';
-import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
@@ -10,21 +9,30 @@ import { Button, HoverButton } from '../src/components/Button';
 
 export default function Home() {
   const router = useRouter();
+  const [name, setName] = React.useState('');
 
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
-
         <Widget>
           <Widget.Header>
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>{db.description}</p>
+            <form onSubmit={function (events) {
+              events.preventDefault();
+              router.push(`/quiz?name=${name}`);
+            }}>
+              <input 
+                onChange={(events) => setName(events.target.value)}
+                placeholder="Diz aí o seu nome" 
+              />
+              
+              <HoverButton>
+                <Button type="submit" disabled={name.length === 0}>JOGAR</Button>
+              </HoverButton>
+            </form>
 
-            <HoverButton>
-              <Button onClick={() => router.push('/quiz')}>JOGAR</Button>
-            </HoverButton>
           </Widget.Content>
         </Widget>
 
@@ -35,8 +43,6 @@ export default function Home() {
             <p>{db.external[0]}</p>
           </Widget.Content>
         </Widget>
-        
-        <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl={db.projectRepo} />
     </QuizBackground>

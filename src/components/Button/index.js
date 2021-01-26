@@ -2,14 +2,12 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
     width: 100%;
-    color: ${({ theme }) => theme.colors.secondary.contrastText };
+    color: ${({ theme }) => theme.colors.secondary.contrastText};
     font-weight: bold;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 10px;
-    border: none;
-    border-radius: ${({ theme }) => theme.borderRadius };
-    background-color: ${({ theme }) => theme.colors.secondary.light03 };
+    height: 35px;
+    margin-top: 20px;
+    border: 1px solid ${({ theme }) => theme.colors.secondary.main};
+    background-color: ${({ theme }) => theme.colors.mainBg};
 
     cursor: pointer;
     transition: .3s ease all;
@@ -18,6 +16,9 @@ export const Button = styled.button`
 
 export const HoverButton = styled.div`
     ${Button}:hover {
-        background-color: ${({ theme }) => theme.colors.secondary.light };
+        letter-spacing: 0.1em;
+        color: ${({ theme }) => theme.colors.mainBg};
+        border: 1px solid ${({ theme }) => theme.colors.secondary.light};
+        background-color: ${({ theme }) => theme.colors.secondary.light};
     }
 `;
