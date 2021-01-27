@@ -5,6 +5,7 @@ import Widget from '../src/components/Widget';
 import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
+import Input from '../src/components/Input';
 import { Button, HoverButton } from '../src/components/Button';
 
 export default function Home() {
@@ -23,14 +24,12 @@ export default function Home() {
               events.preventDefault();
               router.push(`/quiz?name=${name}`);
             }}>
-              <input 
+              <Input 
                 onChange={(events) => setName(events.target.value)}
-                placeholder="Diz aí o seu nome" 
+                placeholder="Diz aí seu nome" 
               />
               
-              <HoverButton>
-                <Button type="submit" disabled={name.length === 0}>JOGAR</Button>
-              </HoverButton>
+              <Button type="submit" disabled={name.length === 0}>JOGAR</Button>
             </form>
 
           </Widget.Content>

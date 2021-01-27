@@ -24,20 +24,23 @@
     "theme": {
         "colors": {
             "primary": {
+              "dark03": "rgba(70, 21, 178, 0.05)",
               "light": "#834bff",
               "main": "#651fff",
               "dark": "#4615b2",
               "contrastText": "#fff"
             },
             "secondary": {
-              "light03": "rgba(131, 75, 255, 0.8)",
+              "light03": "rgba(51, 191, 255, 0.3)",
+              "dark03": "rgba(0, 123, 178, 0.3)",
               "light": "#33bfff",
-              "main": "#00b0ff",
+              "main": "#0091ea",
               "dark": "#007bb2",
               "contrastText": "#fff"
             },
             "mainBg": "#1C1814",
-            "mainBg05": "rgba(28, 24, 20, .5)"
+            "mainBg08": "rgba(38, 34, 30, .8)",
+            "mainBg098": "rgba(38, 34, 30, .95)"
           },
         "borderRadius": "4px"
     }
