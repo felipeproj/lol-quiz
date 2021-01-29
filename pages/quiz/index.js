@@ -13,7 +13,7 @@ const screenStates = {
   RESULT: 'RESULT',
 };
 export default function QuizPage() {
-  const [screenState, setScreenState] = React.useState(screenStates.RESULT);
+  const [screenState, setScreenState] = React.useState(screenStates.QUIZ);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const [results, setResult] = React.useState([]);
   const totalQuestions = db.questions.length;
