@@ -6,11 +6,23 @@ import GitHubCorner from '../src/components/GitHubCorner';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import Input from '../src/components/Input';
-import { Button, HoverButton } from '../src/components/Button';
+import Button from '../src/components/Button';
 
 export default function Home() {
   const router = useRouter();
   const [name, setName] = React.useState('');
+
+  React.useEffect(() => {
+    const listener = event => {
+      if ((event.code === "Enter" || event.code === "NumpadEnter") && name.length > 0) {
+        router.push(`/quiz?name=${name}`);
+      }
+    };
+    document.addEventListener("keydown", listener);
+    return () => {
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -20,13 +32,19 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <form onSubmit={function (events) {
-              events.preventDefault();
-              router.push(`/quiz?name=${name}`);
-            }}>
-              <Input 
+            <form 
+              autoComplete="off"
+              onSubmit={(events) => {
+                events.preventDefault();
+                router.push(`/quiz?name=${name}`);
+              }}
+            >
+              <Input
+                name="nomeDoUsuario"
                 onChange={(events) => setName(events.target.value)}
-                placeholder="Diz aí seu nome" 
+                placeholder="Diz aí seu nome"
+                value={name}
+                autocomplete="off"
               />
               
               <Button type="submit" disabled={name.length === 0}>JOGAR</Button>

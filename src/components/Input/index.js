@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
-const Input = styled.input`
+const InputBase = styled.input`
     width: 100%;
     border: 1px solid ${({ theme }) => theme.colors.primary.light};
-    border-radius: ${({ theme }) => theme.borderRadius};
+    border-radius: 20px;
     background-color: ${({ theme }) => theme.colors.mainBg};
     padding: 7px 20px;
     color: ${({ theme }) => theme.colors.primary.contrastText};
@@ -21,11 +22,44 @@ const Input = styled.input`
         outline: 0;
         background-color: ${({ theme }) => theme.colors.primary.dark03};
     }
+    &:focus::-webkit-input-placeholder {
+        color: transparent;
+    }
+    &:focus:-moz-placeholder { /* Firefox 18- */
+        color: transparent;  
+    }
+    &:focus::-moz-placeholder {  /* Firefox 19+ */
+        color: transparent;  
+    }
+    &:focus:-ms-input-placeholder {  
+        color: transparent;  
+    }
 
     &:empty {
         letter-spacing: 0.05rem;
     }
-
 `;
 
-export default Input;
+export default function Input({ onChange, placeholder, autocomplete, ...props }) {
+    return (
+        <div>
+            <InputBase
+                onChange={onChange}
+                placeholder={placeholder}
+                autocomplete={autocomplete}
+                {...props} 
+            />
+        </div>
+    )
+};
+
+Input.defaultProps = {
+    value: '',
+}
+
+Input.propTypes = {
+    onChange: PropTypes.func.isRequired,
+    placeholder: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+}

@@ -37,17 +37,34 @@ Widget.Header = styled.header`
 `;
 
 Widget.Content = styled.div`
-padding: 24px 32px 32px 32px;
-& > *:first-child {
-  margin-top: 0;
-}
-& > *:last-child {
-  margin-bottom: 0;
-}
-ul {
-  list-style: none;
-  padding: 0;
-}
+  padding: 24px 32px 32px 32px;
+  & > *:first-child {
+    margin-top: 0;
+  }
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+`;
+
+Widget.Topic = styled.a`
+  background-color: ${({theme}) => theme.colors.mainBg};
+  outline: 0;
+  text-decoration: none;
+  color: ${({theme}) => theme.colors.primary.contrastText};
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  /* border-radius: ${({theme}) => theme.borderRadius}; */
+  transition: .3s;
+  display: block;
+
+  input {
+    display: none;
+  }
 `;
 
 export default Widget;
